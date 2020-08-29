@@ -118,8 +118,8 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY|ShiftMask,            XK_period, tagmon,         {.i = +1 } },
 	{  KeyPress,	MODKEY,			     XK_n,	spawn,		SHCMD("xdotool keyup Super_L && xdotool click 1") }, // Left click mouse
 	{  KeyPress,	MODKEY|ShiftMask,            XK_x,	spawn,		SHCMD("slock") },
-	{  KeyPress,	MODKEY,                      XK_Print,	spawn,		SHCMD("escrotum ~/Pictures/Screenshots/%Y-%m-%d-%H%M%S_$wx$h.png && notify-send 'Screenshot saved in ~/Pictures/Screenshots'") },
-	{  KeyPress,	MODKEY|ShiftMask,            XK_Print,	spawn,		SHCMD("escrotum -s ~/Pictures/Screenshots/%Y-%m-%d-%H%M%S_$wx$h.png && notify-send 'Screenshot saved in ~/Pictures/Screenshots'") },
+	{  KeyRelease,	MODKEY,                      XK_Print,	spawn,		SHCMD("escrotum ~/Pictures/Screenshots/%Y-%m-%d-%H%M%S_$wx$h.png && notify-send -t 1500 'Screenshot saved in ~/Pictures/Screenshots'") },
+	{  KeyRelease,	MODKEY|ShiftMask,            XK_Print,	spawn,		SHCMD("escrotum -s ~/Pictures/Screenshots/%Y-%m-%d-%H%M%S_$wx$h.png && notify-send -t 1500 'Screenshot saved in ~/Pictures/Screenshots'") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
