@@ -24,7 +24,8 @@ static const char col_gray4[]       = "#f8f8f8";
 static const char col_accnt[]     = "#7851a9"; // Purple
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
+//	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
+	[SchemeNorm] = { col_gray4, col_gray1, col_gray1 },
 	[SchemeSel]  = { col_gray4, col_accnt, col_accnt },
 };
 
