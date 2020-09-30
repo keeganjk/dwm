@@ -4,29 +4,24 @@
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;	/* 1 means swallow floating windows */
-static const unsigned int gappih    = 25;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 25;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 25;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 25;       /* vert outer gap between windows and screen edge */
-static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static const unsigned int gappih    = 15;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 15;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 15;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 15;       /* vert outer gap between windows and screen edge */
+static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "GohuNew:style=Regular:size=14", /*"Source Han Sans JP:pixelsize=14:antialias=false",*/ "Siji:size=11" };
-static const char dmenufont[]       = "GohuNew:style=Regular:size=14";
-//static const char *fonts[]          = { "Fira Code:style=Regular:size=11", /*"Source Han Sans JP:pixelsize=14:antialias=false",*/ "Siji:size=11" };
-//static const char dmenufont[]       = "Fira Code:style=Regular:size=11";
-static const char col_gray1[]       = "#1b1b1b";
-static const char col_gray2[]       = "#5f5f5f";
-static const char col_gray3[]       = "#c0c0c0";
-static const char col_gray4[]       = "#f8f8f8";
-//static const char col_accnt[]       = "#1f75fe"; // Blue
-//static const char col_accnt[]       = "#dc143c"; // Red
-static const char col_accnt[]     = "#7851a9"; // Purple
+static const char *fonts[]          = { "Fira Code:size=11", "Source San Hans JP:size=11", "Siji" };
+static const char dmenufont[]       = "Fira Code:style=Regular:size=11";
+static const char col_black[]       = "#000000";
+static const char col_gray1[]       = "#777777";
+static const char col_gray2[]       = "#BBBBBB";
+static const char col_white[]       = "#ffffff";
+static const char col_accnt[]       = "#61AFEF"; // Blue
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-//	[SchemeNorm] = { col_gray4, col_gray1, col_gray2 },
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_accnt, col_accnt },
+	[SchemeNorm] = { col_white, col_black, col_gray2 },
+	[SchemeSel]  = { col_accnt, col_black, col_accnt },
 };
 
 /* tagging */
@@ -71,7 +66,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_accnt, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_black, "-sf", col_accnt, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
