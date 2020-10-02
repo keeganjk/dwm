@@ -11,7 +11,7 @@ static const unsigned int gappov    = 15;       /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=11", "Source San Hans JP:size=11", "Siji" };
+static const char *fonts[]          = { "Fira Code:size=11", "M+ 1m:pixelsize=11:antialias=true:autohint=true", "Siji" };
 static const char dmenufont[]       = "Fira Code:style=Regular:size=11";
 static const char col_black[]       = "#000000";
 static const char col_gray1[]       = "#777777";
@@ -146,4 +146,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-

@@ -41,6 +41,7 @@ local_ip() {
 }
 
 while true; do # Generic loop
-	xsetroot -name "[$(local_ip)][$(cpu_percentage)][$(memory_percentage)][$(updates &)][$(date_and_time)]" 
+	#xsetroot -name "[$(local_ip)][$(cpu_percentage)][$(memory_percentage)][$(updates &)][$(date_and_time)]" 
+	xsetroot -name " $(local_ip) | $(cpu_percentage) | $(memory_percentage) | $(updates &) | $(date_and_time) " 
     sleep 30
 done &
