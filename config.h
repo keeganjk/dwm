@@ -6,8 +6,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;	/* 1 means swallow floating windows */
 static const unsigned int gappih    = 15;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 15;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 15;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 15;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -18,6 +18,7 @@ static const char col_gray1[]       = "#777777";
 static const char col_gray2[]       = "#BBBBBB";
 static const char col_white[]       = "#ffffff";
 static const char col_accnt[]       = "#61AFEF"; // Blue
+//static const char col_accnt[]       = "#50FA7B"; // Green
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_black, col_gray2 },
@@ -34,11 +35,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class      instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",     NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "firefox",  NULL,     NULL,           1 << 9,    0,          0,          -1,        -1 },
+	{ "chromium", NULL,     NULL,           1 << 1,    0,          0,          -1,        -1 },
+	{ "discord",  NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
+	{ "st",       NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,       NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
