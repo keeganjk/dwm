@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;	/* 1 means swallow floating windows */
 static const unsigned int gappih    = 15;       /* horiz inner gap between windows */
@@ -11,8 +11,10 @@ static const unsigned int gappov    = 0;       /* vert outer gap between windows
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code:size=11", "M+ 1m:pixelsize=11:antialias=true:autohint=true", "Siji" };
-static const char dmenufont[]       = "Fira Code:style=Regular:size=11";
+//static const char *fonts[]          = { "Fira Code:size=11", "M+ 1m:pixelsize=11:antialias=true:autohint=true", "Siji" };
+//static const char dmenufont[]       = "Fira Code:style=Regular:size=11";
+static const char *fonts[]          = { "Unifont:size=12", "Siji:size=16" };
+static const char dmenufont[]       = "Unifont";
 static const char col_black[]       = "#000000";
 static const char col_gray0[]       = "#09080d";
 static const char col_gray1[]       = "#52505b";
@@ -70,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray0, "-nf", col_white, "-sb", col_gray0, "-sf", col_accnt, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray0, "-nf", col_gray3, "-sb", col_gray0, "-sf", col_accnt, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
