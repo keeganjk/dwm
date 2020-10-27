@@ -16,12 +16,14 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Unifont:size=12", "Siji:size=16" };
 static const char dmenufont[]       = "Unifont";
 static const char col_black[]       = "#000000";
+static const char col_backg[]       = "#09080d";
+static const char col_gray0[]       = "#09080d";
 static const char col_gray0[]       = "#09080d";
 static const char col_gray1[]       = "#52505b";
 static const char col_gray2[]       = "#7e8989";
 static const char col_gray3[]       = "#939394";
 static const char col_white[]       = "#ffffff";
-static const char col_accnt[]	    = "#667893"; //Blue
+static const char col_accnt[]	    = "#4e5f7c"; //Blue
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray0, col_gray3 },
@@ -30,8 +32,6 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-//static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
-//static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
 static const Rule rules[] = {
 	/* xprop(1):
