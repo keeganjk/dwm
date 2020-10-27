@@ -4,8 +4,8 @@
 static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;	/* 1 means swallow floating windows */
-static const unsigned int gappih    = 15;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 15;       /* vert inner gap between windows */
+static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
@@ -17,16 +17,16 @@ static const char *fonts[]          = { "Unifont:size=12", "Siji:size=16" };
 static const char dmenufont[]       = "Unifont";
 static const char col_black[]       = "#000000";
 static const char col_backg[]       = "#09080d";
-static const char col_gray0[]       = "#09080d";
-static const char col_gray0[]       = "#09080d";
+static const char col_gray0[]       = "#0f0d16";
 static const char col_gray1[]       = "#52505b";
-static const char col_gray2[]       = "#7e8989";
+static const char col_gray2[]       = "#929c9c";
 static const char col_gray3[]       = "#939394";
+static const char col_foreg[]       = "#c7c7c7";
 static const char col_white[]       = "#ffffff";
 static const char col_accnt[]	    = "#4e5f7c"; //Blue
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray0, col_gray3 },
+	[SchemeNorm] = { col_foreg, col_backg, col_gray3 },
 	[SchemeSel]  = { col_accnt, col_gray0, col_accnt },
 };
 
@@ -72,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray0, "-nf", col_gray3, "-sb", col_gray0, "-sf", col_accnt, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_backg, "-nf", col_foreg, "-sb", col_gray0, "-sf", col_accnt, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
