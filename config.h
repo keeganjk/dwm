@@ -11,8 +11,8 @@ static const unsigned int gappov    = 0;        /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Unifont:size=12", "Siji:size=16" };
-static const char dmenufont[]       = "Unifont";
+static const char *fonts[]          = { "Unifont:pixelsize=16", "Siji:pixelsize=16" };
+static const char dmenufont[]       = "Unifont:pixelsize=16";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
