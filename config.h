@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static unsigned int borderpx        = 4;        /* border pixel of windows */
+static unsigned int borderpx        = 2;        /* border pixel of windows */
 static unsigned int snap            = 32;       /* snap pixel */
 static const int swallowfloating    = 0;	/* 1 means swallow floating windows */
 static const unsigned int gappih    = 5;        /* horiz inner gap between windows */
@@ -11,8 +11,8 @@ static const unsigned int gappov    = 0;        /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Unifont:pixelsize=16", "Siji:pixelsize=16" };
-static const char dmenufont[]       = "Unifont:pixelsize=16";
+static const char *fonts[]          = { "ypn envypn", "Siji" };
+static const char dmenufont[]       = "ypn envypn";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -21,8 +21,8 @@ static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 static char *colors[][3] = {
        /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, selbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  normbgcolor, selbordercolor  },
 };
 
 /* tagging */
@@ -35,6 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",     NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Krita",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "firefox",  NULL,     NULL,           1 << 9,    0,          0,          -1,        -1 },
 	{ "chromium", NULL,     NULL,           1 << 1,    0,          0,          -1,        -1 },
 	{ "discord",  NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
