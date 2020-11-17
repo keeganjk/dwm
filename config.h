@@ -11,7 +11,7 @@ static const unsigned int gappov    = 0;        /* vert outer gap between window
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "ypn envypn", "Siji" };
+static const char *fonts[]          = { "ypn envypn", "Siji", "Unifont", "JoyPixels" };
 static const char dmenufont[]       = "ypn envypn";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -33,14 +33,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",     NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "krita",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "firefox",  NULL,     NULL,           1 << 9,    0,          0,          -1,        -1 },
-	{ "chromium", NULL,     NULL,           1 << 1,    0,          0,          -1,        -1 },
-	{ "discord",  NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
-	{ "st",       NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,       NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	/* class         instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",        NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "krita",       NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "pavucontrol", NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "firefox",     NULL,     NULL,           1 << 9,    0,          0,          -1,        -1 },
+	{ "chromium",    NULL,     NULL,           1 << 1,    0,          0,          -1,        -1 },
+	{ "discord",     NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
+	{ "st",          NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,          NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
