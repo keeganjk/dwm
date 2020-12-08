@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class         instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",        NULL,     NULL,           0,         1,          0,           0,        -1 },
-	//{ "mpv",         NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "mpv",         NULL,     NULL,           0,         0,          0,           0,        -1 },
 	{ "krita",       NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "pavucontrol", NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "firefox",     NULL,     NULL,           1 << 9,    0,          0,          -1,        -1 },
