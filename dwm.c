@@ -512,8 +512,7 @@ swallow(Client *p, Client *c)
 }
 
 void
-unswallow(Client *c)
-{
+unswallow(Client *c) {
 	c->win = c->swallowing->win;
 
 	free(c->swallowing);

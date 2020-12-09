@@ -3,7 +3,7 @@
 /* appearance */
 static unsigned int borderpx        = 2;        /* border pixel of windows */
 static unsigned int snap            = 32;       /* snap pixel */
-static const int swallowfloating    = 0;	/* 1 means swallow floating windows */
+static const int swallowfloating    = 1;	/* 1 means swallow floating windows */
 static const unsigned int gappih    = 5;        /* horiz inner gap between windows */
 static const unsigned int gappiv    = 5;        /* vert inner gap between windows */
 static const unsigned int gappoh    = 0;        /* horiz outer gap between windows and screen edge */
@@ -35,13 +35,10 @@ static const Rule rules[] = {
 	 */
 	/* class         instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",        NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "mpv",         NULL,     NULL,           0,         0,          0,           0,        -1 },
 	{ "krita",       NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "pavucontrol", NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "firefox",     NULL,     NULL,           1 << 9,    0,          0,          -1,        -1 },
-	{ "chromium",    NULL,     NULL,           1 << 1,    0,          0,          -1,        -1 },
-	{ "discord",     NULL,     NULL,           1 << 3,    0,          0,          -1,        -1 },
-	{ "st",          NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "St",          NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "ranger",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,          NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
 
