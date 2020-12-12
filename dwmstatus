@@ -1,4 +1,5 @@
 #!/bin/sh
+laptop=1
 
 date_and_time() {
     DAT="$(date '+%Y.%m.%d %H:%M')"
@@ -40,8 +41,29 @@ local_ip() {
     echo -n "$LOCAL_IP"
 }
 
-while true; do # Generic loop
-	#xsetroot -name "[$(local_ip)][$(cpu_percentage)][$(memory_percentage)][$(updates &)][$(date_and_time)]" 
+battery() {
+    CHARGE_OR_DISCHARGE="$(acpi | sed 's/\S*\s\S*\s//;s/,.*//')"
+    BATTERY_PERCENTAGE="$(acpi | sed 's/\S*\s\S*\s\S*\s//;s/\%.*//')"
+    BATTERY_DIVFIVE=$(echo "scale=1; $BATTERY_PERCENTAGE/5" | bc)
+    BATTERY_DIVFIVE_INV=$(echo "scale=1; 20-$BATTERY_DIVFIVE" | bc)
+    THREEPLUS=$(echo "scale=1; 3+$BATTERY_DIVFIVE" | bc)
+    TWENTYMINUS=$(echo "scale=1; 20-$BATTERY_DIVFIVE_INV" | bc)
+    #echo -n "^r0,7,2,4^^r2,4,22,10^^c#08090D^^r3,5,20,8^^c#939394^^r$THREEPLUS,5,$TWENTYMINUS,8^^d^^f24^ $BATTERY_PERCENTAGE%"
+    if [[ "$CHARGE_OR_DISCHARGE" == "Charging" ]]; then
+        echo -n "$BATTERY_PERCENTAGE%"
+    else
+        echo -n "$BATTERY_PERCENTAGE%"
+    fi
+}
+
+if [[ $laptop -eq 1 ]]; then
+    while true; do 
+	    xsetroot -name " $(local_ip) | $(cpu_percentage) | $(memory_percentage) | $(battery) | $(updates &) | $(date_and_time) " 
+	sleep 30
+    done
+else
+    while true; do 
 	xsetroot -name " $(local_ip) | $(cpu_percentage) | $(memory_percentage) | $(updates &) | $(date_and_time) " 
-    sleep 30
-done &
+	sleep 30
+    done
+fi
