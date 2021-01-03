@@ -1,5 +1,5 @@
 #!/bin/sh
-laptop=1
+laptop=0
 
 date_and_time() {
     DAT="$(date '+%Y.%m.%d %H:%M')"
