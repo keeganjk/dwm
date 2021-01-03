@@ -56,9 +56,18 @@ battery() {
     fi
 }
 
+volume() {
+    VOL="$(amixer -M sget Master | tail +5 | sed 's/.*Playback\s//;s/..\s\[//;s/\%.*//')"
+    if amixer get Master | sed 5q | grep -q '\[on\]'; then 
+	echo -n "$VOL%"
+    else
+	echo -n "$VOL%"
+    fi
+}
+
 if [[ $laptop -eq 1 ]]; then
     while true; do 
-	    xsetroot -name " $(local_ip) | $(cpu_percentage) | $(memory_percentage) | $(battery) | $(updates &) | $(date_and_time) " 
+	    xsetroot -name " $(local_ip) | $(cpu_percentage) | $(memory_percentage) | $(volume) | $(battery) | $(updates &) | $(date_and_time) " 
 	sleep 30
     done
 else
