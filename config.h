@@ -47,6 +47,7 @@ static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
+#include "layouts.c"
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -54,7 +55,8 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
  	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
+ 	{ "[\\]",     dwindle },
+	{ "HHH",      grid },
 };
 
 /* key definitions */
@@ -97,7 +99,7 @@ ResourcePref resources[] = {
 #include "movestack.c"
 #include <X11/XF86keysym.h>
 static Key keys[] = {
-	/* type		modifier                     key               function        argument */
+	/* type		modifier                         key               function        argument */
 	{  KeyPress,	MODKEY,                      XK_p,             spawn,          {.v = dmenucmd } },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_Return,        spawn,          {.v = termcmd } },
 	{  KeyPress,	MODKEY,                      XK_grave,         togglescratch,  {.v = scratchpadcmd } },
@@ -108,8 +110,8 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY,                      XK_d,             incnmaster,     {.i = -1 } },
 	{  KeyPress,	MODKEY,                      XK_h,             setmfact,       {.f = -0.05} },
 	{  KeyPress,	MODKEY,                      XK_l,             setmfact,       {.f = +0.05} },
-	{  KeyPress,	MODKEY|ShiftMask,	     XK_j,             movestack,      {.i = +1 } },
-	{  KeyPress,	MODKEY|ShiftMask,	     XK_k,             movestack,      {.i = -1 } },
+	{  KeyPress,	MODKEY|ShiftMask,	         XK_j,             movestack,      {.i = +1 } },
+	{  KeyPress,	MODKEY|ShiftMask,	         XK_k,             movestack,      {.i = -1 } },
 	{  KeyPress,	MODKEY|Mod1Mask,             XK_h,             incrgaps,       {.i = +1 } },
 	{  KeyPress,	MODKEY|Mod1Mask,             XK_l,             incrgaps,       {.i = -1 } },
 	{  KeyPress,	MODKEY|Mod1Mask|ShiftMask,   XK_h,             incrogaps,      {.i = +1 } },
@@ -134,6 +136,7 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY,                      XK_m,             setlayout,      {.v = &layouts[2]} },
 	{  KeyPress,	MODKEY,                      XK_r,             setlayout,      {.v = &layouts[3]} },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_r,             setlayout,      {.v = &layouts[4]} },
+    {  KeyPress,    MODKEY,                      XK_g,             setlayout,      {.v = &layouts[5]} },
 	{  KeyPress,	MODKEY,                      XK_space,         setlayout,      {0} },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_space,         togglefloating, {0} },
 	{  KeyPress,	MODKEY,                      XK_s,             togglesticky,   {0} },

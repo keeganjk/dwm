@@ -45,6 +45,7 @@ static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
+#include "layouts.c"
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -53,6 +54,7 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
 	{ "[\]",      dwindle },
+	{ "HHH",      grid },
 };
 
 /* key definitions */
@@ -131,6 +133,7 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{  KeyPress,	MODKEY,                       XK_r,      setlayout,      P.v = &layouts[3]} },
 	{  KeyPress,	MODKEY|ShiftMask,             XK_r,      setlayout,      P.v = &layouts[4]} },
+    {  KeyPress     MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
 	{  KeyPress,	MODKEY,                       XK_space,  setlayout,      {0} },
 	{  KeyPress,	MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{  KeyPress,	MODKEY,                       XK_s,      togglesticky,   {0} },
