@@ -55,6 +55,9 @@ static const Layout layouts[] = {
 	{ "[@]",      spiral },
 	{ "[\]",      dwindle },
 	{ "HHH",      grid },
+    { "###",      gaplessgrid },
+	{ "|M|",      centeredmaster },
+	{ ">M>",      centeredfloatingmaster },
 };
 
 /* key definitions */
@@ -134,6 +137,9 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY,                       XK_r,      setlayout,      P.v = &layouts[3]} },
 	{  KeyPress,	MODKEY|ShiftMask,             XK_r,      setlayout,      P.v = &layouts[4]} },
     {  KeyPress     MODKEY,                       XK_g,      setlayout,      {.v = &layouts[5]} },
+    {  KeyPress,    MODKEY|ShiftMask,             XK_g,      setlayout,      {.v = &layouts[6]} },
+	{  KeyPress,    MODKEY,                       XK_u,      setlayout,      {.v = &layouts[7]} },
+	{  KeyPress,    MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[8]} },
 	{  KeyPress,	MODKEY,                       XK_space,  setlayout,      {0} },
 	{  KeyPress,	MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{  KeyPress,	MODKEY,                       XK_s,      togglesticky,   {0} },
