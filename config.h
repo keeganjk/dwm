@@ -49,6 +49,7 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 
 #include "layouts.c"
 #include "fibonacci.c"
+#include "gaplessgrid.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -57,6 +58,7 @@ static const Layout layouts[] = {
  	{ "[@]",      spiral },
  	{ "[\\]",     dwindle },
 	{ "HHH",      grid },
+    { "###",      gaplessgrid },
 };
 
 /* key definitions */
@@ -137,6 +139,7 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY,                      XK_r,             setlayout,      {.v = &layouts[3]} },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_r,             setlayout,      {.v = &layouts[4]} },
     {  KeyPress,    MODKEY,                      XK_g,             setlayout,      {.v = &layouts[5]} },
+    {  KeyPress,    MODKEY|ShiftMask,            XK_g,             setlayout,      {.v = &layouts[6]} },
 	{  KeyPress,	MODKEY,                      XK_space,         setlayout,      {0} },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_space,         togglefloating, {0} },
 	{  KeyPress,	MODKEY,                      XK_s,             togglesticky,   {0} },
