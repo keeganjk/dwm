@@ -26,7 +26,13 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1","2","3","4","5","6","7","8","9" }; // Modern Arabic numerals
+//static const char *tags[] = { "I","II","III","IV","V","VI","VII","VIII","IX" }; // Roman numerals
+//static const char *tags[] = { "Ⅰ","Ⅱ","Ⅲ","Ⅳ","Ⅴ","Ⅵ","ⅥI","Ⅵ","ⅠX" }; // Roman numerals (Unicode) (improper)
+//static const char *tags[] = { "𝍠","𝍡","𝍢","𝍣","𝍤","𝍥","𝍦","𝍧","𝍨" }; // Counting rods (unicode)
+//static const char *tags[] = { "α","β","γ","δ","ε","ς","ζ","η","θ" }; // Greek numerals
+//static const char *tags[] = { "Α","Β","Γ","Δ","Ε","F","Ζ","Η","Θ" }; // Greek numerals (capital)
+//static const char *tags[] = { "א","ב","ג","ד","ה","ו","ז","ח","ט" }; // Hebrew numerals
 
 static const Rule rules[] = {
 	/* xprop(1):
