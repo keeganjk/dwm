@@ -11,8 +11,8 @@ static const unsigned int gappov    = 25;        /* vert outer gap between windo
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus:pixelsize=14", "Siji", "JoyPixels:pixelsize=14", "東風明朝:pixelsize=14" };
-static const char dmenufont[]       = "Terminus:pixelsize=14";
+static const char *fonts[]          = { "Misc Termsyn-12:pixelsize=14", "Siji", "JoyPixels:pixelsize=14", "東風明朝:pixelsize=14" };
+static const char dmenufont[]       = "Misc Termsyn-12:pixelsize=14";
 static char normbgcolor[]           = "#09080d";
 static char normbordercolor[]       = "#939394";
 static char normfgcolor[]           = "#c7c7c7";
@@ -26,8 +26,9 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1","2","3","4","5","6","7","8","9" }; // Modern Arabic numerals
-//static const char *tags[] = { "I","II","III","IV","V","VI","VII","VIII","IX" }; // Roman numerals
+//static const char *tags[] = { "1","2","3","4","5","6","7","8","9" }; // Modern Arabic numerals
+//static const char *tags[] = { "term","text","web","mail","im","rss","media","misc","void" }; // Named tags
+static const char *tags[] = { "I","II","III","IV","V","VI","VII","VIII","IX" }; // Roman numerals
 //static const char *tags[] = { "Ⅰ","Ⅱ","Ⅲ","Ⅳ","Ⅴ","Ⅵ","ⅥI","Ⅵ","ⅠX" }; // Roman numerals (Unicode) (improper)
 //static const char *tags[] = { "𝍠","𝍡","𝍢","𝍣","𝍤","𝍥","𝍦","𝍧","𝍨" }; // Counting rods (unicode)
 //static const char *tags[] = { "α","β","γ","δ","ε","ς","ζ","η","θ" }; // Greek numerals
