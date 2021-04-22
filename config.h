@@ -11,10 +11,9 @@ static const unsigned int gappov    = 0;        /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar                  = 1;        /* 0 means no bar */
 static int topbar                   = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Misc Termsyn-12:pixelsize=14",
+static const char *fonts[]          = { "AW Greybeard:pixelsize=13",
                                         "Siji", 
-                                        "JoyPixels:pixelsize=14", 
-                                        "東風明朝:pixelsize=14" };
+                                        "東風明朝:pixelsize=13" };
 static const char dmenufont[]       = "Misc Termsyn-12:pixelsize=14";
 static char normbgcolor[]           = "#09080d";
 static char normbordercolor[]       = "#939394";
