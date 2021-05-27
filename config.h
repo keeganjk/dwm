@@ -30,7 +30,7 @@ static char *colors[][3] = {
 /* tagging */
 //static const char *tags[] = { "1","2","3","4","5","6","7","8","9" }; // Modern Arabic numerals
 //static const char *tags[] = { "term","text","web","mail","im","rss","media","misc","void" }; // Named tags
-static const char *tags[] = { "I","II","III","IV","V","VI","VII","VIII","IX" }; // Roman numerals
+static const char *tags[] = { "I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII" }; // Roman numerals
 //static const char *tags[] = { "Ⅰ","Ⅱ","Ⅲ","Ⅳ","Ⅴ","Ⅵ","ⅥI","Ⅵ","ⅠX" }; // Roman numerals (Unicode) (improper)
 //static const char *tags[] = { "𝍠","𝍡","𝍢","𝍣","𝍤","𝍥","𝍦","𝍧","𝍨" }; // Counting rods (unicode)
 //static const char *tags[] = { "α","β","γ","δ","ε","ς","ζ","η","θ" }; // Greek numerals
@@ -157,8 +157,8 @@ static Key keys[] = {
 	{  KeyPress,	MODKEY,                      XK_space,         setlayout,      {0} },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_space,         togglefloating, {0} },
 	{  KeyPress,	MODKEY,                      XK_s,             togglesticky,   {0} },
-	{  KeyPress,	MODKEY,                      XK_0,             view,           {.ui = ~0 } },
-	{  KeyPress,	MODKEY|ShiftMask,            XK_0,             tag,            {.ui = ~0 } },
+	{  KeyPress,	MODKEY,                      XK_BackSpace,     view,           {.ui = ~0 } },
+	{  KeyPress,	MODKEY|ShiftMask,            XK_BackSpace,     tag,            {.ui = ~0 } },
 	{  KeyPress,	MODKEY,                      XK_comma,         focusmon,       {.i = -1 } },
 	{  KeyPress,	MODKEY,                      XK_period,        focusmon,       {.i = +1 } },
 	{  KeyPress,	MODKEY|ShiftMask,            XK_comma,         tagmon,         {.i = -1 } },
@@ -172,6 +172,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                          6)
 	TAGKEYS(                        XK_8,                          7)
 	TAGKEYS(                        XK_9,                          8)
+	TAGKEYS(                        XK_0,                          9)
+	TAGKEYS(                        XK_minus,                      10)
+	TAGKEYS(                        XK_equal,                      11)
 	//{  KeyPress,    MODKEY|ShiftMask,            XK_q,             quit,           {0} },
 };
 
